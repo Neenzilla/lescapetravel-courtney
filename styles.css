@@ -25,15 +25,18 @@ header::after{
     padding: 0px;
 }
 
+    /* Adjusted overflow & padding
+        Source: https://developer.mozilla.org/en-US/docs/Web/CSS/overflow */
+
 .container-nav{
-    width: 70%;
+    width: 100%;
     margin: 0 auto;
-    padding-top: 200px;
+    padding-top: 20px;
 }
 
 nav{
-    float: right;
-    overflow: auto;
+    float: left;
+    overflow: visible;
 }
 
 nav ul{
@@ -44,8 +47,8 @@ nav ul{
 
 nav li{
     display: inline-block;
-    margin-left: 50px;
-    padding-top: 25px;
+    margin-left: 25px;
+    padding-top: 5px;
     
     /* Position: relative makes it relative to the list item */
     position: relative;
@@ -86,6 +89,18 @@ nav a:hover::after{
 
 }
 
+.webpage-title{
+    float: center;
+    overflow: auto;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 50px;
+    color: #14443E;
+    padding: 10px;
+}
+
+
+
 
 /* Body */
 
@@ -109,49 +124,62 @@ nav a:hover::after{
 
 
 
-/* Positions background image below nav bar, make image responsive */
-    /* Sources: 
-    https://stackoverflow.com/questions/38038056/adding-a-background-image-just-below-the-navigation-bar 
-    https://stackoverflow.com/questions/14059429/css-full-size-background-image 
-    https://stackoverflow.com/questions/5040232/how-to-center-a-background-image-within-a-div#:~:text=For%20center%20or%20positioning%20the,%2Dposition%20%3A%20xvalue%20yvalue%3B%20.
+    /* Positions background image below nav bar, make image responsive */
+        /* Sources: 
+        https://stackoverflow.com/questions/38038056/adding-a-background-image-just-below-the-navigation-bar 
+        https://stackoverflow.com/questions/14059429/css-full-size-background-image 
+        https://stackoverflow.com/questions/5040232/how-to-center-a-background-image-within-a-div#:~:text=For%20center%20or%20positioning%20the,%2Dposition%20%3A%20xvalue%20yvalue%3B%20.
+        */
 
-    */
-.container-bg-image{
-    background: url("images/benjamin-lizardo-d-OoxMOAIgU-unsplash\ \(3\).jpg");
+.wrapper-bg{
+    width: 100%;
+    position: relative;
+}
+
+.bg-image{
+    background: url("images/benjamin-lizardo-d-OoxMOAIgU-unsplash\ \(3\).jpeg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    width: 100%;
-    position: relative;
     padding-top: 56.25%; /* 16:9 ratio */
-    /* text-align: center; */
+
+    position: relative;
 }
 
+
+    /* Button was not cooperating until I discovered this:
+    #2) absolute positioning the inner element at 50% from the top of their parent, then translating it up 50% of its height 
+        Source: https://blog.logrocket.com/13-ways-to-vertical-center/ */
 .booking-btn{
     position: absolute;
-    display: block;
-    width: 100px;
-    margin-left: auto;
-    margin-right: auto;
-    
+    top: 50%;
+    transform: translateX(200%) translateY(-50%);
 
-    background-color: white;
-    background-position: center;
-    border-radius: 1.5em;
+
     text-decoration: none;
+    border: white;
+    border-radius: 3px;
     text-transform: uppercase;
-    padding: 1em 1.5em;
-    
+    padding: 2px;
+
+    background: #fff;
+    color: #14443E;
+    letter-spacing: 2px;
+    font-size: 40px;
 }
+
+
+
 
 
 
 /* Footer */
-.container-footer{
+.wrapper-footer{
     width: 100%;
+    position: relative;
     background: #f2ad8d;
-    padding: 10px;
-    padding-left: 1350px;
+    padding: 25px;
+    
     margin: 0 auto;
 }
 
@@ -160,21 +188,22 @@ nav a:hover::after{
 
 footer::after{
     content: '';
-    display: table;
-    clear: both;
+    display: block;
+    height: 5px;
+    width: 100%;
+    
 }
 
 footer ul{
-    margin: 0;
-    padding: 0;
+    margin: 0 auto;
+    padding: 10px;
     list-style: none;
 }
 
 footer li{
     display: inline-block;
-    margin-left: 50px;
-    padding-top: 25px;
-    
+    margin-left: 25px;
+    padding-top: 5px;
     /* Position: relative makes it relative to the list item */
     position: relative;
 }
