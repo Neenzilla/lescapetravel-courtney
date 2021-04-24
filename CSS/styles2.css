@@ -89,7 +89,15 @@ nav a:hover::after{
 
 }
 
-
+.webpage-title{
+    float: center;
+    overflow: auto;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 50px;
+    color: #14443E;
+    padding: 10px;
+}
 
 
 
@@ -97,9 +105,11 @@ nav a:hover::after{
 
     /* Resolved excess white padding on the right side */
     /* Source: https://stackoverflow.com/questions/4617872/white-space-showing-up-on-right-side-of-page-when-background-image-should-extend */
-html, body, section{
+/* html, body{
     height: 100%;
-}
+    padding: 0;
+    margin: 0;
+} */
 
 .body{
     width: 100%;
@@ -107,12 +117,7 @@ html, body, section{
     margin: 0px;
     padding: 0px;
     overflow-x: hidden;
-
-    /* Color Gradient */
-    /* Source: https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient() */
     background: whitesmoke;
-    
-
     font-family: 'Work Sans', sans-serif;
     font-weight: 500;
 }
@@ -123,40 +128,45 @@ html, body, section{
 }
 
 .content-wrapper{
-    margin: 15px;
-}
-
-.row{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     width: 100%;
+    /* position: relative; */
+    display: inline-flex;
+    margin: 0 auto;
 }
 
-.column{
-    display: flex;
-    flex-direction: column;
-    flex-basis: 100%;
-    flex: 1;
-}
 
-.image-wrapper {
-    height: 100px;
+/* .image-wrapper {
+    width: 0.5rem; 
+
+} */
+
+img {
+    display: block;
+    max-width: 70rem;
+    max-height: 70rem;
+    width: auto;
+    height: auto;
 }
 
 .text-wrapper{
+    width: 0.5rem;
     height: 100px;
+    padding: 300px;
+    position: center;
 }
 
+h2 {
+    color: #7C7C7C;
+}
 
 
 
 /* Footer */
 .wrapper-footer{
     width: 100%;
-    position: absolute;
+    position: relative;
     bottom: 0;
-    height: 2.5rem;
+    /* height: 2.5rem; */
     background: #f2ad8d;
     padding: 25px;
     
