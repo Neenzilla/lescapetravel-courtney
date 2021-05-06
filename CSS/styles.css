@@ -1,244 +1,210 @@
-/* HEADER: Includes logo, navigation bar */
-.container-logo{
-    width: 65%; 
-    margin: 10 auto;
+/* Font sources: 
+https://artisanthemes.io/best-google-fonts-combinations-modern-agency-website/ 
+https://fonts.google.com/ */
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Montserrat&display=swap');
+
+
+/* Color Palette */
+:root{
+    /* Greens */
+    --green: #0C7940;
+    --sea_green: #14443E;
+    --light_green: #7C945C;
+    /* Blues */
+    --blue: #5A99A6;
+    --slate_blue: #306C8A;
+    --light_blue: #6BAFB8;
+    /* Neutrals */
+    --tan: #F2AD8D;
+
 }
 
-header{
-    width: 100%;
-    background: #f2ad8d;
-    padding: 10px;
+
+/* Global Settings */
+* {
+    margin:0; padding:0;
+    box-sizing: border-box;
+    border: none !important;
+    outline: none !important;
+    text-decoration: none !important;
+    text-transform: capitalize;
+    font-weight: 400;
+    transition: all .2s linear
 }
 
-    /* CSS trick; ensures nav bar works */
-    /* Source: https://www.youtube.com/watch?v=FEmysQARWFU */
-
-header::after{
-    content: '';
-    display: table;
-    clear: both;
-}
-
-.logo{
-    float: left;
-    width: 35%;
-    padding: 0px;
-}
-
-    /* Adjusted overflow & padding
-        Source: https://developer.mozilla.org/en-US/docs/Web/CSS/overflow */
-
-.container-nav{
-    width: 100%;
-    margin: 0 auto;
-    padding-top: 20px;
-}
-
-nav{
-    float: left;
-    overflow: visible;
-}
-
-nav ul{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-nav li{
-    display: inline-block;
-    margin-left: 25px;
-    padding-top: 5px;
-    
-    /* Position: relative makes it relative to the list item */
-    position: relative;
-}
-
-nav ul > li > a{
+*::selection {
+    background:var(--white);
     color: white;
-    text-decoration: none;
-    text-transform: uppercase; 
-    font-size: 20px;
 }
 
-nav a::hover{
-    color: #000;
-
-}
-
-nav a::after{
-    content: '';
-    display: block;
-    height: 5px;
-    width: 100%;
-    background-color: #7c945c;
-
-    position: relative;
-    top: 0;
-    width: 0%;
-
-    /* Creates responsive transition below nav bar elements */
-    /* Source: https://www.youtube.com/watch?v=FEmysQARWFU */
-
-    transition: all ease-in-out 250ms;
-    
-}
-
-nav a:hover::after{
-    width: 100%;
-
-}
-
-.webpage-title{
-    float: center;
-    overflow: auto;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 50px;
-    color: #14443E;
-    padding: 10px;
-}
-
-
-
-
-/* Body */
-
-    /* Resolved excess white padding on the right side */
-    /* Source: https://stackoverflow.com/questions/4617872/white-space-showing-up-on-right-side-of-page-when-background-image-should-extend */
-.body{
-    width: 100%;
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
+html {
+    font-size: 62.5%;
     overflow-x: hidden;
-
-    /* Color Gradient */
-    /* Source: https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient() */
-    background: linear-gradient(180deg, #14443E, #5A99A6);
-    
-
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 500;
 }
 
-
-
-    /* Positions background image below nav bar, make image responsive */
-        /* Sources: 
-        https://stackoverflow.com/questions/38038056/adding-a-background-image-just-below-the-navigation-bar 
-        https://stackoverflow.com/questions/14059429/css-full-size-background-image 
-        https://stackoverflow.com/questions/5040232/how-to-center-a-background-image-within-a-div#:~:text=For%20center%20or%20positioning%20the,%2Dposition%20%3A%20xvalue%20yvalue%3B%20.
-        */
-
-.wrapper-bg{
-    width: 100%;
-    position: relative;
-}
-
-.bg-image{
-    background: url("../images/benjamin-lizardo-d-OoxMOAIgU-unsplash\ \(3\).jpeg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    padding-top: 56.25%; /* 16:9 ratio */
-
-    position: relative;
-}
-
-
-    /* Button was not cooperating until I discovered this:
-    #2) absolute positioning the inner element at 50% from the top of their parent, then translating it up 50% of its height 
-        Source: https://blog.logrocket.com/13-ways-to-vertical-center/ */
-.booking-btn{
-    position: absolute;
-    top: 50%;
-    transform: translateX(200%) translateY(-50%);
-
-
-    text-decoration: none;
-    border: white;
-    border-radius: 3px;
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
     text-transform: uppercase;
-    padding: 2px;
+}
 
-    background: #fff;
-    color: #14443E;
-    letter-spacing: 2px;
-    font-size: 40px;
+body {
+    font-family: 'Lora', serif;
+    overflow-x: hidden;
+    height: 3000px;
 }
 
 
+/* Header */
+#nav {
+    display: grid;
+    padding: 1rem;
+    margin: 1rem;
+}
 
-
-
-
-/* Footer */
-.wrapper-footer{
+header {
     width: 100%;
-    position: relative;
-    background: #f2ad8d;
-    padding: 25px;
-    
-    margin: 0 auto;
+    position: fixed;
+    top: 0; left: 0;
+    padding: 2rem 1rem;
+    z-index: 1000;
 }
 
-    /* CSS trick; ensures nav bar works */
-    /* Source: https://www.youtube.com/watch?v=FEmysQARWFU */
-
-footer::after{
-    content: '';
-    display: block;
-    height: 5px;
-    width: 100%;
-    
+header a {
+    color:var(--light_green);
 }
 
-footer ul{
-    margin: 0 auto;
-    padding: 10px;
+header a:hover {
+    color:var(--tan);
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .container .logo {
+    font-size: 3.5rem;
+}
+
+header .container .logo span {
+    color:var(--tan);
+}
+
+/* Header Nav */
+#home {
+    display: grid | inline-grid;
+}
+
+header .nav ul {
+    margin: 0; padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     list-style: none;
 }
 
-footer li{
-    display: inline-block;
-    margin-left: 25px;
-    padding-top: 5px;
-    /* Position: relative makes it relative to the list item */
-    position: relative;
+header .nav ul li {
+    margin: 0 1rem;
 }
 
-footer ul > li > a{
-    color: white;
-    text-decoration: none;
-    text-transform: uppercase; 
-    font-size: 20px;
+header .nav ul li a {
+    font-size: 2rem;
 }
 
-footer a::hover{
-    color: #000;
-
+header .fa-bars {
+    font-size: 3.5rem;
+    color:var(--light_green);
+    cursor: pointer;
+    display: none;
 }
 
-footer a::after{
-    content: '';
-    display: block;
-    height: 5px;
-    width: 100%;
-    background-color: #7c945c;
-
-    position: relative;
-    top: 0;
-    width: 0%;
-
-    /* Creates responsive transition below nav bar elements */
-    /* Source: https://www.youtube.com/watch?v=FEmysQARWFU */
-
-    transition: all ease-in-out 250ms;
-    
+    /* NOTE: Added hover animations for hamburger menu */
+header .fa-bars:hover {
+    color:var(--tan);
 }
 
-footer a:hover::after{
-    width: 100%;
+header .fa-times{
+    transform: rotate(180deg);
+}
+    /* NOTE: Added hover animations for hamburger menu */
+header .fa-times:hover {
+    color:var(--tan);
+}
 
+
+
+/* Home Content */
+
+#lescapeBanner{
+    display: grid;
+    padding: 10rem;
+    margin: 4rem;
+}
+
+#letsTravel {
+    display: grid;
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+
+#home .content h1{
+    font-size: 5rem;
+    color:var(--sea_green);
+}
+
+#home .content h1 span {
+    color:var(--light_green);
+}
+
+#home .content h3 {
+    font-size: 4rem;
+    color:var(--sea_green);
+}
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+    html{
+        font-size: 55%;
+    }
+
+    header .fa-bars {
+        display: block;
+    }
+
+    header .nav {
+        position: fixed;
+        top: -100rem; left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 0 100vh rgba(0,0,0,.3);
+        border-radius: 0.5rem;
+        border: 0.3rem solid var(--tan) !important;
+        background: white;
+        width: 95%;
+        opacity: 0;    
+    }
+
+    header .nav ul {
+        width: 100%;
+        flex-flow: column;
+        padding: 2rem 0;
+    }
+
+    header .nav ul li {
+        width: 100%;
+        text-align: center;
+        margin: 1rem 0;
+    }
+
+    header .nav ul li a {
+        font-size: 3rem;
+        display: block;
+    }
+
+    header .nav-toggle {
+        top: 50%;
+        opacity: 1;
+    }
 }
