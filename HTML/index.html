@@ -1,7 +1,10 @@
 <!-- 
     Nina Robichaud
-    4/5/21
     Web Page Design II - L'escape Travel by Courtney ~HOMEPAGE~
+ -->
+
+ <!-- References:
+https://www.youtube.com/watch?v=pAzTbmkAsU8
  -->
 
  <!DOCTYPE html>
@@ -12,58 +15,84 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>lescapetravel-courtney INDEX</title>
  
-     <link rel="stylesheet" type="text/css" href="../CSS/styles.css">
+     <!-- <link rel="stylesheet" type="text/css" href="../CSS/styles.css">
      <link rel="preconnect" href="https://fonts.gstatic.com">
-     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap" rel="stylesheet"> -->
  
+
+    <!-- Bootstrap CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap-grid.min.css">
+
+    <!-- Font Awesome CDN link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- CSS File link -->
+    <link rel="stylesheet" href="../CSS/styles.css">
+
  </head>
  <body class="body">
+
+<!-- Header section -->
+<header>
+    <div class="container" id="nav">
+        <a href="#" class="logo"><span>L'</span>escape <span>T</span>ravel <span>b</span>y <span>C</span>ourtney</a>
+
+        <nav class="nav nav-default nav-fixed-top">
+            <ul>
+                <li><a href="../HTML/index.html">Home</a></li>
+                <li><a href="../HTML/about.html">About</a></li>
+                <li><a href="../HTML/booking.html">Booking</a></li>
+                <li><a href="../HTML/reviews.html">Reviews</a></li>
+                <li><a href="../HTML/contact.html">Contact</a></li>
+                <li><a href="../HTML/covid19.html">COVID-19</a></li>
+            </ul>
+        </nav>
+
+        <!-- REFERENCE: Bootstrap Font Awesome 5 ICONS
+            https://www.w3schools.com/icons/icons_reference.asp -->
+        <div class="fas fa-bars"></div>
+
+
+    </div>
+</header>
+
+
+<!-- Home Section -->
+    <div class="container" id="home">
+        <!-- Bootstrap Grid: https://getbootstrap.com/docs/4.0/layout/grid/ -->
+        <div class="row">
+            <div class="col">
+                <img id="lescapeBanner" 
+                    src="../images/lescape_banner.png" alt="L'escape Travel by Courtney logo">
+            </div>
+
+            <div class="col-md-6 pl-md-5 content" id="letsTravel">
+                <h1><span>Let's </span>travel <span>to </span>paradise</h1>
+                <!-- <h3>Your journey starts here</h3> -->
+                <a href="/HTML/index.html"><button class="button">Book a Trip</button></a>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
  
- <!-- Header & Nav Bar -->
-     <header>
-         <div class="container-logo">
- 
-             <img class="logo"
-             src="../images/lescape_banner.png"
-             alt="L'escape Travel by Courtney LOGO">
-         </div>
- 
-         <div class="container-nav">
-             <nav>
-                 <ul>
-                     <li><a href="#">Home</a></li>
-                     <li><a href="#">About L'escape Travel</a></li>
-                     <li><a href="#">About Courtney</a></li>
-                     <li><a href="#">Reviews</a></li>
-                     <li><a href="#">Contact Info</a></li>
-                     <li><a href="#">COVID-19</a></li>
-                 </ul>
-                 <h1 class="webpage-title">Home</h1>
-             </nav>
-         </div>
-     </header>
- 
- 
- <!-- Hero Image & Button -->
- 
-     <div class="wrapper-bg">
-         <div class="bg-image">
-                 <a href="#" class="booking-btn" alt="Book a Trip">Book a Trip</a>         
-         </div>
-     </div>
- 
- <!-- Footer -->
-     <div class="wrapper-footer">
-         <footer class="footer">
-             <ul>
-                 <li><a href="#">Home</a></li>
-                 <li><a href="#">Privacy Policy</a></li>
-                 <li><a href="#">COVID-19</a></li>
-             </ul>
-         </footer>
-     </div>
- 
- 
-     
+<!-- Footer -->
+
+
+
+
+<!-- jQuery CDN link -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- jQuery Documentation:
+        https://jquery.com/ -->
+
+
+<!-- Custom JS link -->
+<script src="../JS/main.js"></script>
+
  </body>
  </html>   
