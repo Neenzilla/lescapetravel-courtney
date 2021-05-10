@@ -44,7 +44,9 @@ body, html {
 
     font-family: 'Lora', serif;
     overflow-x: hidden;
-    /* height: 3000px; */
+
+    min-height: 100%;
+    overflow-y: scroll;
 
 }
 
@@ -170,14 +172,18 @@ header .fa-times:hover {
     width: 80%;
     margin: auto;
     padding: 3px;
+    background-color: var(--tan);
+    color: var(--sea_green);
+    font-size: 3.5;
+}
+
+#info .button:hover {
+    color:var(--white);
+    font-size: 3.5rem;
+    cursor: pointer;
 }
 
 
-/* #letsTravel {
-    display: grid;
-    padding: 0.5rem;
-    margin: 0.5rem;
-} */
 
 #home h1{
     font-size: 5rem;
@@ -198,8 +204,9 @@ header .fa-times:hover {
 
 #info{
     font-size: 2rem;
-
+    overflow: hidden;
 }
+  
 
 
 /* Media Queries */
