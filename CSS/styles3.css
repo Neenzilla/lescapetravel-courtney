@@ -1,0 +1,225 @@
+/* Font sources: 
+https://artisanthemes.io/best-google-fonts-combinations-modern-agency-website/ 
+https://fonts.google.com/ */
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Montserrat&display=swap');
+
+
+/* Color Palette */
+:root{
+    /* Greens */
+    --green: #0C7940;
+    --sea_green: #14443E;
+    --light_green: #7C945C;
+    /* Blues */
+    --blue: #5A99A6;
+    --slate_blue: #306C8A;
+    --light_blue: #6BAFB8;
+    /* Neutrals */
+    --tan: #F2AD8D;
+
+}
+
+
+/* Global Settings */
+* {
+    margin:0; padding:0;
+    box-sizing: border-box;
+    border: none !important;
+    outline: none !important;
+    text-decoration: none !important;
+    font-weight: 400;
+    transition: all .2s linear
+}
+
+*::selection {
+    background:var(--white);
+    color: white;
+}
+
+body, html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    height: 100%;
+    padding-top: 30px;
+
+    font-family: 'Lora', serif;
+    overflow-x: hidden;
+    /* height: 3000px; */
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+body {
+    font-family: 'Lora', serif;
+    overflow-x: hidden;
+    height: 3000px;
+}
+
+
+/* CSS Tricks: Grid */
+    /* Source: https://css-tricks.com/snippets/css/complete-guide-grid/ */
+
+/* Header */
+#nav {
+    display: grid;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0; left: 0;
+    padding: 2rem 1rem;
+    z-index: 1000;
+    background: white;
+}
+
+header a {
+    color:var(--light_green);
+}
+
+header a:hover {
+    color:var(--tan);
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .container .logo {
+    font-size: 3.5rem;
+}
+
+header .container .logo span {
+    color:var(--tan);
+}
+
+/* Header Nav */
+
+header .nav ul {
+    margin: 0; padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+}
+
+header .nav ul li {
+    margin: 0 1rem;
+}
+
+header .nav ul li a {
+    font-size: 2.5rem;
+}
+
+header .fa-bars {
+    font-size: 3.5rem;
+    color:var(--light_green);
+    cursor: pointer;
+    display: none;
+}
+
+    /* NOTE: Added hover animations for hamburger menu */
+header .fa-bars:hover {
+    color:var(--tan);
+}
+
+header .fa-times{
+    transform: rotate(180deg);
+}
+    /* NOTE: Added hover animations for hamburger menu */
+header .fa-times:hover {
+    color:var(--tan);
+}
+
+
+
+/* Home Content */
+#home h1{
+    font-size: 5rem;
+    color:var(--sea_green);
+}
+
+#home h2 {
+    font-size: 3rem;
+    color:var(--sea_green);
+}
+
+#home {
+    padding-top: 150px;
+
+}
+
+#info{
+    font-size: 2rem;
+
+}
+
+
+#home .content h1{
+    font-size: 5rem;
+    color:var(--sea_green);
+}
+
+#home .content h1 span {
+    color:var(--light_green);
+}
+
+#home .content h3 {
+    font-size: 4rem;
+    color:var(--sea_green);
+}
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+    html{
+        font-size: 55%;
+    }
+
+    header .fa-bars {
+        display: block;
+    }
+
+    header .nav {
+        position: fixed;
+        top: -100rem; left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 0 100vh rgba(0,0,0,.3);
+        border-radius: 0.5rem;
+        border: 0.3rem solid var(--tan) !important;
+        background: white;
+        width: 95%;
+        opacity: 0;    
+    }
+
+    header .nav ul {
+        width: 100%;
+        flex-flow: column;
+        padding: 2rem 0;
+    }
+
+    header .nav ul li {
+        width: 100%;
+        text-align: center;
+        margin: 1rem 0;
+    }
+
+    header .nav ul li a {
+        font-size: 3rem;
+        display: block;
+    }
+
+    header .nav-toggle {
+        top: 50%;
+        opacity: 1;
+    }
+}
