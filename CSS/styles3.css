@@ -178,6 +178,12 @@ header .fa-times:hover {
     color:var(--sea_green);
 }
 
+/* FORM */
+#form{
+    padding: 0px;
+    width: 100%;
+}
+
 /* Media Queries */
 
 @media (max-width: 768px) {
